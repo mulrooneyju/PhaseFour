@@ -13,10 +13,24 @@
     Friend Shared OracleConnection As New System.Data.OracleClient.OracleConnection
 
 
-    Friend Shared bookingAdapter As New System.Data.OracleClient.OracleDataAdapter
-    Friend Shared bookingCommand As New System.Data.OracleClient.OracleCommand
-    Friend Shared bookingCommandBuilder As System.Data.OracleClient.OracleCommandBuilder
-    Friend Shared bookingTable As New System.Data.DataTable
+    Friend Shared staffAdapter As New System.Data.OracleClient.OracleDataAdapter
+    Friend Shared staffCommand As New System.Data.OracleClient.OracleCommand
+    Friend Shared staffCommandBuilder As System.Data.OracleClient.OracleCommandBuilder
+    Friend Shared staffTable As New System.Data.DataTable
+
+    Friend Shared qualificationAdapter As New System.Data.OracleClient.OracleDataAdapter
+    Friend Shared qualificationCommand As New System.Data.OracleClient.OracleCommand
+    Friend Shared qualificationCommandBuilder As System.Data.OracleClient.OracleCommandBuilder
+    Friend Shared qualificationTable As New System.Data.DataTable
+
+    Friend Shared experienceAdapter As New System.Data.OracleClient.OracleDataAdapter
+    Friend Shared experienceCommand As New System.Data.OracleClient.OracleCommand
+    Friend Shared experienceCommandBuilder As System.Data.OracleClient.OracleCommandBuilder
+    Friend Shared experienceTable As New System.Data.DataTable
+
+
+
+
 
     Friend Shared frmLogin As New FormClassLogin
     Private Shared frmInfo As New FormClassInfo
@@ -24,9 +38,42 @@
 
 
     Public Shared Sub LogInAtRunTime()
+
         OracleConnection.ConnectionString = "Data Source=" & Server & ";User ID=" & UserName & ";Password=" & PassWord & ";Unicode=True"
-        bookingCommand.Connection = OracleConnection
-        bookingCommandBuilder = New System.Data.OracleClient.OracleCommandBuilder(bookingAdapter)
+
+        staffCommand.Connection = OracleConnection
+        staffCommandBuilder = New System.Data.OracleClient.OracleCommandBuilder(staffAdapter)
+        experienceCommand.Connection = OracleConnection
+        experienceCommandBuilder = New System.Data.OracleClient.OracleCommandBuilder(experienceAdapter)
+        qualificationCommand.Connection = OracleConnection
+        qualificationCommandBuilder = New System.Data.OracleClient.OracleCommandBuilder(qualificationAdapter)
+
+        staffCommand.CommandType = CommandType.Text
+        staffCommand.CommandText = "Select * from UWP_STAFF"
+        staffCommand.Connection = OracleConnection
+
+        staffAdapter.SelectCommand = staffCommand
+        staffCommandBuilder = New System.Data.OracleClient.OracleCommandBuilder(staffAdapter)
+        staffAdapter.Fill(staffTable)
+
+        experienceCommand.CommandType = CommandType.Text
+        experienceCommand.CommandText = "Select * from UWP_WorkExperience"
+        experienceCommand.Connection = OracleConnection
+
+        experienceAdapter.SelectCommand = experienceCommand
+        experienceCommandBuilder = New System.Data.OracleClient.OracleCommandBuilder(experienceAdapter)
+        experienceAdapter.Fill(experienceTable)
+
+
+        qualificationCommand.CommandType = CommandType.Text
+        qualificationCommand.CommandText = "Select * from UWP_Qualifications"
+        qualificationCommand.Connection = OracleConnection
+
+        qualificationAdapter.SelectCommand = qualificationCommand
+        staffCommandBuilder = New System.Data.OracleClient.OracleCommandBuilder(qualificationAdapter)
+        staffAdapter.Fill(staffTable)
+
+
     End Sub
 
     Public Shared Sub Main()

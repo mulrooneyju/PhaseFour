@@ -64,7 +64,6 @@ Partial Class FormClassInfo
         Me.txtPosition = New System.Windows.Forms.TextBox()
         Me.txtNin = New System.Windows.Forms.TextBox()
         Me.txtGender = New System.Windows.Forms.TextBox()
-        Me.txtDob = New System.Windows.Forms.TextBox()
         Me.txtFname = New System.Windows.Forms.TextBox()
         Me.txtLastname = New System.Windows.Forms.TextBox()
         Me.txtCity = New System.Windows.Forms.TextBox()
@@ -99,12 +98,17 @@ Partial Class FormClassInfo
         Me.Button23 = New System.Windows.Forms.Button()
         Me.Button24 = New System.Windows.Forms.Button()
         Me.dtpQauldate = New System.Windows.Forms.DateTimePicker()
+        Me.txtStreet = New System.Windows.Forms.TextBox()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.txtSalaryscale = New System.Windows.Forms.TextBox()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.dtpDob = New System.Windows.Forms.DateTimePicker()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 52)
+        Me.Label1.Location = New System.Drawing.Point(12, 47)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(44, 13)
         Me.Label1.TabIndex = 0
@@ -167,7 +171,7 @@ Partial Class FormClassInfo
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(12, 448)
+        Me.Label9.Location = New System.Drawing.Point(12, 439)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(90, 13)
         Me.Label9.TabIndex = 8
@@ -221,7 +225,7 @@ Partial Class FormClassInfo
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(12, 481)
+        Me.Label15.Location = New System.Drawing.Point(12, 467)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(70, 13)
         Me.Label15.TabIndex = 14
@@ -230,7 +234,7 @@ Partial Class FormClassInfo
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(12, 415)
+        Me.Label16.Location = New System.Drawing.Point(12, 411)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(70, 13)
         Me.Label16.TabIndex = 15
@@ -239,7 +243,7 @@ Partial Class FormClassInfo
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(12, 382)
+        Me.Label17.Location = New System.Drawing.Point(12, 355)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(72, 13)
         Me.Label17.TabIndex = 16
@@ -248,7 +252,7 @@ Partial Class FormClassInfo
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(12, 349)
+        Me.Label18.Location = New System.Drawing.Point(12, 327)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(58, 13)
         Me.Label18.TabIndex = 17
@@ -257,7 +261,7 @@ Partial Class FormClassInfo
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(12, 316)
+        Me.Label19.Location = New System.Drawing.Point(12, 299)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(26, 13)
         Me.Label19.TabIndex = 18
@@ -266,7 +270,7 @@ Partial Class FormClassInfo
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(12, 283)
+        Me.Label20.Location = New System.Drawing.Point(12, 271)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(53, 13)
         Me.Label20.TabIndex = 19
@@ -275,7 +279,7 @@ Partial Class FormClassInfo
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(12, 250)
+        Me.Label21.Location = New System.Drawing.Point(12, 243)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(30, 13)
         Me.Label21.TabIndex = 20
@@ -284,7 +288,7 @@ Partial Class FormClassInfo
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(12, 217)
+        Me.Label22.Location = New System.Drawing.Point(12, 215)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(45, 13)
         Me.Label22.TabIndex = 21
@@ -293,7 +297,7 @@ Partial Class FormClassInfo
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(12, 184)
+        Me.Label24.Location = New System.Drawing.Point(12, 187)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(24, 13)
         Me.Label24.TabIndex = 23
@@ -302,7 +306,7 @@ Partial Class FormClassInfo
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(12, 151)
+        Me.Label25.Location = New System.Drawing.Point(12, 159)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(42, 13)
         Me.Label25.TabIndex = 24
@@ -311,7 +315,7 @@ Partial Class FormClassInfo
         'Label26
         '
         Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(12, 118)
+        Me.Label26.Location = New System.Drawing.Point(12, 131)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(31, 13)
         Me.Label26.TabIndex = 25
@@ -320,7 +324,7 @@ Partial Class FormClassInfo
         'Label27
         '
         Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(12, 85)
+        Me.Label27.Location = New System.Drawing.Point(12, 75)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(65, 13)
         Me.Label27.TabIndex = 26
@@ -328,7 +332,7 @@ Partial Class FormClassInfo
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(92, 515)
+        Me.Button1.Location = New System.Drawing.Point(89, 561)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(42, 23)
         Me.Button1.TabIndex = 27
@@ -337,7 +341,7 @@ Partial Class FormClassInfo
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(221, 544)
+        Me.Button2.Location = New System.Drawing.Point(218, 590)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 28
@@ -346,7 +350,7 @@ Partial Class FormClassInfo
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(140, 543)
+        Me.Button3.Location = New System.Drawing.Point(137, 589)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 29
@@ -355,7 +359,7 @@ Partial Class FormClassInfo
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(59, 544)
+        Me.Button4.Location = New System.Drawing.Point(56, 590)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
         Me.Button4.TabIndex = 30
@@ -364,7 +368,7 @@ Partial Class FormClassInfo
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(277, 515)
+        Me.Button5.Location = New System.Drawing.Point(274, 561)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(42, 23)
         Me.Button5.TabIndex = 31
@@ -373,7 +377,7 @@ Partial Class FormClassInfo
         '
         'Button6
         '
-        Me.Button6.Location = New System.Drawing.Point(222, 515)
+        Me.Button6.Location = New System.Drawing.Point(219, 561)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(42, 23)
         Me.Button6.TabIndex = 32
@@ -382,7 +386,7 @@ Partial Class FormClassInfo
         '
         'Button7
         '
-        Me.Button7.Location = New System.Drawing.Point(37, 515)
+        Me.Button7.Location = New System.Drawing.Point(34, 561)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(42, 23)
         Me.Button7.TabIndex = 33
@@ -409,98 +413,91 @@ Partial Class FormClassInfo
         '
         'txtPhone
         '
-        Me.txtPhone.Location = New System.Drawing.Point(112, 213)
+        Me.txtPhone.Location = New System.Drawing.Point(112, 211)
         Me.txtPhone.Name = "txtPhone"
         Me.txtPhone.Size = New System.Drawing.Size(170, 20)
         Me.txtPhone.TabIndex = 50
         '
         'txtTypeofpay
         '
-        Me.txtTypeofpay.Location = New System.Drawing.Point(112, 477)
+        Me.txtTypeofpay.Location = New System.Drawing.Point(112, 463)
         Me.txtTypeofpay.Name = "txtTypeofpay"
         Me.txtTypeofpay.Size = New System.Drawing.Size(170, 20)
         Me.txtTypeofpay.TabIndex = 51
         '
         'txtPospermtemp
         '
-        Me.txtPospermtemp.Location = New System.Drawing.Point(112, 444)
+        Me.txtPospermtemp.Location = New System.Drawing.Point(112, 435)
         Me.txtPospermtemp.Name = "txtPospermtemp"
         Me.txtPospermtemp.Size = New System.Drawing.Size(170, 20)
         Me.txtPospermtemp.TabIndex = 52
         '
         'txtHrsperwk
         '
-        Me.txtHrsperwk.Location = New System.Drawing.Point(112, 411)
+        Me.txtHrsperwk.Location = New System.Drawing.Point(112, 407)
         Me.txtHrsperwk.Name = "txtHrsperwk"
         Me.txtHrsperwk.Size = New System.Drawing.Size(170, 20)
         Me.txtHrsperwk.TabIndex = 53
         '
         'txtCursalary
         '
-        Me.txtCursalary.Location = New System.Drawing.Point(112, 378)
+        Me.txtCursalary.Location = New System.Drawing.Point(112, 351)
         Me.txtCursalary.Name = "txtCursalary"
         Me.txtCursalary.Size = New System.Drawing.Size(170, 20)
         Me.txtCursalary.TabIndex = 54
         '
         'txtPosition
         '
-        Me.txtPosition.Location = New System.Drawing.Point(112, 345)
+        Me.txtPosition.Location = New System.Drawing.Point(112, 323)
         Me.txtPosition.Name = "txtPosition"
         Me.txtPosition.Size = New System.Drawing.Size(170, 20)
         Me.txtPosition.TabIndex = 55
         '
         'txtNin
         '
-        Me.txtNin.Location = New System.Drawing.Point(112, 312)
+        Me.txtNin.Location = New System.Drawing.Point(112, 295)
         Me.txtNin.Name = "txtNin"
         Me.txtNin.Size = New System.Drawing.Size(170, 20)
         Me.txtNin.TabIndex = 56
         '
         'txtGender
         '
-        Me.txtGender.Location = New System.Drawing.Point(112, 279)
+        Me.txtGender.Location = New System.Drawing.Point(112, 267)
         Me.txtGender.Name = "txtGender"
         Me.txtGender.Size = New System.Drawing.Size(170, 20)
         Me.txtGender.TabIndex = 57
         '
-        'txtDob
-        '
-        Me.txtDob.Location = New System.Drawing.Point(112, 246)
-        Me.txtDob.Name = "txtDob"
-        Me.txtDob.Size = New System.Drawing.Size(170, 20)
-        Me.txtDob.TabIndex = 58
-        '
         'txtFname
         '
-        Me.txtFname.Location = New System.Drawing.Point(112, 48)
+        Me.txtFname.Location = New System.Drawing.Point(112, 43)
         Me.txtFname.Name = "txtFname"
         Me.txtFname.Size = New System.Drawing.Size(170, 20)
         Me.txtFname.TabIndex = 59
         '
         'txtLastname
         '
-        Me.txtLastname.Location = New System.Drawing.Point(112, 81)
+        Me.txtLastname.Location = New System.Drawing.Point(112, 71)
         Me.txtLastname.Name = "txtLastname"
         Me.txtLastname.Size = New System.Drawing.Size(170, 20)
         Me.txtLastname.TabIndex = 60
         '
         'txtCity
         '
-        Me.txtCity.Location = New System.Drawing.Point(112, 114)
+        Me.txtCity.Location = New System.Drawing.Point(112, 127)
         Me.txtCity.Name = "txtCity"
         Me.txtCity.Size = New System.Drawing.Size(170, 20)
         Me.txtCity.TabIndex = 61
         '
         'txtState
         '
-        Me.txtState.Location = New System.Drawing.Point(112, 147)
+        Me.txtState.Location = New System.Drawing.Point(112, 155)
         Me.txtState.Name = "txtState"
         Me.txtState.Size = New System.Drawing.Size(170, 20)
         Me.txtState.TabIndex = 62
         '
         'txtZip
         '
-        Me.txtZip.Location = New System.Drawing.Point(112, 180)
+        Me.txtZip.Location = New System.Drawing.Point(112, 183)
         Me.txtZip.Name = "txtZip"
         Me.txtZip.Size = New System.Drawing.Size(170, 20)
         Me.txtZip.TabIndex = 63
@@ -514,7 +511,7 @@ Partial Class FormClassInfo
         '
         'TextBox16
         '
-        Me.TextBox16.Location = New System.Drawing.Point(159, 518)
+        Me.TextBox16.Location = New System.Drawing.Point(156, 564)
         Me.TextBox16.Name = "TextBox16"
         Me.TextBox16.Size = New System.Drawing.Size(35, 20)
         Me.TextBox16.TabIndex = 65
@@ -747,11 +744,57 @@ Partial Class FormClassInfo
         Me.dtpQauldate.Size = New System.Drawing.Size(200, 20)
         Me.dtpQauldate.TabIndex = 92
         '
+        'txtStreet
+        '
+        Me.txtStreet.Location = New System.Drawing.Point(112, 99)
+        Me.txtStreet.Name = "txtStreet"
+        Me.txtStreet.Size = New System.Drawing.Size(170, 20)
+        Me.txtStreet.TabIndex = 94
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(12, 103)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(50, 13)
+        Me.Label23.TabIndex = 93
+        Me.Label23.Text = "STREET"
+        '
+        'txtSalaryscale
+        '
+        Me.txtSalaryscale.Location = New System.Drawing.Point(112, 379)
+        Me.txtSalaryscale.Name = "txtSalaryscale"
+        Me.txtSalaryscale.Size = New System.Drawing.Size(170, 20)
+        Me.txtSalaryscale.TabIndex = 96
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Location = New System.Drawing.Point(12, 383)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(83, 13)
+        Me.Label28.TabIndex = 95
+        Me.Label28.Text = "SALARYSCALE"
+        '
+        'dtpDob
+        '
+        Me.dtpDob.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpDob.Location = New System.Drawing.Point(112, 239)
+        Me.dtpDob.Name = "dtpDob"
+        Me.dtpDob.Size = New System.Drawing.Size(170, 20)
+        Me.dtpDob.TabIndex = 97
+        '
         'FormClassInfo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(814, 625)
+        Me.ControlBox = False
+        Me.Controls.Add(Me.dtpDob)
+        Me.Controls.Add(Me.txtSalaryscale)
+        Me.Controls.Add(Me.Label28)
+        Me.Controls.Add(Me.txtStreet)
+        Me.Controls.Add(Me.Label23)
         Me.Controls.Add(Me.dtpQauldate)
         Me.Controls.Add(Me.Button24)
         Me.Controls.Add(Me.Button23)
@@ -786,7 +829,6 @@ Partial Class FormClassInfo
         Me.Controls.Add(Me.txtCity)
         Me.Controls.Add(Me.txtLastname)
         Me.Controls.Add(Me.txtFname)
-        Me.Controls.Add(Me.txtDob)
         Me.Controls.Add(Me.txtGender)
         Me.Controls.Add(Me.txtNin)
         Me.Controls.Add(Me.txtPosition)
@@ -830,6 +872,7 @@ Partial Class FormClassInfo
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "FormClassInfo"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "InfoScreen"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -878,7 +921,6 @@ Partial Class FormClassInfo
     Friend WithEvents txtPosition As TextBox
     Friend WithEvents txtNin As TextBox
     Friend WithEvents txtGender As TextBox
-    Friend WithEvents txtDob As TextBox
     Friend WithEvents txtFname As TextBox
     Friend WithEvents txtLastname As TextBox
     Friend WithEvents txtCity As TextBox
@@ -913,4 +955,9 @@ Partial Class FormClassInfo
     Friend WithEvents Button23 As Button
     Friend WithEvents Button24 As Button
     Friend WithEvents dtpQauldate As DateTimePicker
+    Friend WithEvents txtStreet As TextBox
+    Friend WithEvents Label23 As Label
+    Friend WithEvents txtSalaryscale As TextBox
+    Friend WithEvents Label28 As Label
+    Friend WithEvents dtpDob As DateTimePicker
 End Class
