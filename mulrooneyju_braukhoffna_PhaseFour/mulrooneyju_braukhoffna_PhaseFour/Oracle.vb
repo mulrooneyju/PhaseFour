@@ -21,12 +21,12 @@
     Friend Shared qualificationAdapter As New System.Data.OracleClient.OracleDataAdapter
     Friend Shared qualificationCommand As New System.Data.OracleClient.OracleCommand
     Friend Shared qualificationCommandBuilder As System.Data.OracleClient.OracleCommandBuilder
-    Friend Shared qualificationTable As New System.Data.DataTable
+    Friend Shared qualificationTable As New System.Data.DataTable("UWP_Qualifications")
 
     Friend Shared experienceAdapter As New System.Data.OracleClient.OracleDataAdapter
     Friend Shared experienceCommand As New System.Data.OracleClient.OracleCommand
     Friend Shared experienceCommandBuilder As System.Data.OracleClient.OracleCommandBuilder
-    Friend Shared experienceTable As New System.Data.DataTable
+    Friend Shared experienceTable As New System.Data.DataTable("UWP_Experience")
 
 
 
@@ -43,8 +43,10 @@
 
         staffCommand.Connection = OracleConnection
         staffCommandBuilder = New System.Data.OracleClient.OracleCommandBuilder(staffAdapter)
+
         experienceCommand.Connection = OracleConnection
         experienceCommandBuilder = New System.Data.OracleClient.OracleCommandBuilder(experienceAdapter)
+
         qualificationCommand.Connection = OracleConnection
         qualificationCommandBuilder = New System.Data.OracleClient.OracleCommandBuilder(qualificationAdapter)
 
@@ -65,16 +67,21 @@
         experienceAdapter.Fill(experienceTable)
 
 
+
         qualificationCommand.CommandType = CommandType.Text
-        qualificationCommand.CommandText = "Select * from UWP_Qualifications"
+        qualificationCommand.CommandText = "Select * from UWP_WorkExperience"
         qualificationCommand.Connection = OracleConnection
 
         qualificationAdapter.SelectCommand = qualificationCommand
-        staffCommandBuilder = New System.Data.OracleClient.OracleCommandBuilder(qualificationAdapter)
-        staffAdapter.Fill(staffTable)
+        qualificationCommandBuilder = New System.Data.OracleClient.OracleCommandBuilder(qualificationAdapter)
+        qualificationAdapter.Fill(qualificationTable)
+
+        ' Need to set row filter for bookingDataView
 
 
     End Sub
+
+
 
     Public Shared Sub Main()
         Dim connected As Boolean

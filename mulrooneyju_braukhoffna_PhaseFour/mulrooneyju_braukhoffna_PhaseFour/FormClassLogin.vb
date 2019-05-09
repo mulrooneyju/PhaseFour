@@ -13,9 +13,13 @@
 
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Oracle.UserName = TextBox1.Text
-        Oracle.PassWord = TextBox2.Text
-        Oracle.Server = TextBox3.Text
+        'Oracle.UserName = TextBox1.Text
+        'Oracle.PassWord = TextBox2.Text
+        'Oracle.Server = TextBox3.Text
+
+        Oracle.UserName = "mulrooneyju"
+        Oracle.PassWord = "Wrestling10"
+        Oracle.Server = "EDDB"
 
         Oracle.Result = Oracle.ResponseType.OK
 
