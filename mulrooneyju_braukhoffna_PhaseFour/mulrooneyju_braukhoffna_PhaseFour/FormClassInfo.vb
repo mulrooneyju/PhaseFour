@@ -47,7 +47,7 @@
         dtpFinishDate.DataBindings.Add("Text", experienceBindingSource, "finishdate")
 
 
-        TextBox16.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
+        InfoNum.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
         QualNum.Text = (qualificationBindingSource.Position + 1) & "/" & qualificationBindingSource.Count
         ExpNum.Text = (experienceBindingSource.Position + 1) & "/" & experienceBindingSource.Count
         ButtonChecker()
@@ -78,7 +78,7 @@
         If (staffBindingSource.Count > 1) Then
             InfoNext.Enabled = True
             InfoLast.Enabled = True
-        ElseIf (staffBindingSource.Position = staffBindingSource.count - 1) Then
+        ElseIf (staffBindingSource.Position = staffBindingSource.Count - 1) Then
             InfoNext.Enabled = False
             InfoLast.Enabled = False
         End If
@@ -152,14 +152,14 @@
     'Arrows
     Private Sub InfoFirst_Click(sender As Object, e As EventArgs) Handles InfoFirst.Click
         staffBindingSource.MoveFirst()
-        TextBox16.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
+        InfoNum.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
         UpdateQual()
 
     End Sub
 
     Private Sub InfoPrevious_Click(sender As Object, e As EventArgs) Handles InfoPrevious.Click
         staffBindingSource.MovePrevious()
-        TextBox16.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
+        InfoNum.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
         UpdateQual()
 
     End Sub
@@ -167,13 +167,13 @@
     Private Sub InfoNext_Click(sender As Object, e As EventArgs) Handles InfoNext.Click
         staffBindingSource.MoveNext()
         experienceDataView.RowFilter = "STAFFNO = '" + txtStaffno.Text + "'"
-        TextBox16.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
+        InfoNum.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
         UpdateQual()
     End Sub
 
     Private Sub InfoLast_Click(sender As Object, e As EventArgs) Handles InfoLast.Click
         staffBindingSource.MoveLast()
-        TextBox16.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
+        InfoNum.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
         UpdateQual()
 
     End Sub
@@ -182,7 +182,7 @@
     Private Sub StaffDelete_Click(sender As Object, e As EventArgs) Handles QaulPrevious.Click
         Try
             staffBindingSource.RemoveCurrent()
-            TextBox16.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
+            InfoNum.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
             StaffSave.PerformClick()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -213,7 +213,7 @@
         Oracle.staffTable.Rows.Add(row)
         staffBindingSource.MoveLast()
 
-        TextBox16.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
+        InfoNum.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
 
 
     End Sub
@@ -287,5 +287,39 @@
     End Sub
 
     'Search
+    Private Sub All_Click(sender As Object, e As EventArgs) Handles All.Click
+        Oracle.staffCommand.CommandText = "Select * from uwp_staff"
 
+        Oracle.staffTable.Clear()
+        Oracle.staffAdapter.Fill(Oracle.staffTable)
+
+        InfoNum.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
+    End Sub
+
+    Private Sub Search_Click(sender As Object, e As EventArgs) Handles Search.Click
+
+        If (feildDrop.SelectedIndex = 0) Then
+            Oracle.staffCommand.CommandText = "select Distinct s.*
+                                from uwp_staff s
+                                join uwp_Qualifications q 
+                                    on s.staffno = q.staffno
+                                    and q.type = '" + txtValue.Text + "'"
+        Else
+            Oracle.staffCommand.CommandText = "select Distinct s.*
+                                from uwp_staff s
+                                join uwp_WorkExperience e 
+                                    on s.staffno = e.staffno
+                                    and e.orgname = '" + txtValue.Text + "'"
+        End If
+
+        experienceDataView.RowFilter = "staffno = '" & txtStaffno.Text & "'"
+        ExpNum.Text = (experienceBindingSource.Position + 1) & "/" & experienceBindingSource.Count
+        UpdateQual()
+
+
+        Oracle.staffTable.Clear()
+        Oracle.staffAdapter.Fill(Oracle.staffTable)
+
+        InfoNum.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
+    End Sub
 End Class

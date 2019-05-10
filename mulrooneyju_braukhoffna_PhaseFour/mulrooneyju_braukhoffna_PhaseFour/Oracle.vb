@@ -51,12 +51,12 @@
 
         'qualification table set up 
         qualificationCommand.CommandType = CommandType.Text
-        qualificationCommand.CommandText = "Select * from UWP_Qualification"
+        qualificationCommand.CommandText = "Select * from UWP_Qualifications"
         qualificationCommand.Connection = OracleConnection
 
         qualificationAdapter.SelectCommand = qualificationCommand
         qualificationCommandBuilder = New System.Data.OracleClient.OracleCommandBuilder(qualificationAdapter)
-        staffAdapter.Fill(qualificationTable)
+        qualificationAdapter.Fill(qualificationTable)
 
 
         'Work Experience table set up

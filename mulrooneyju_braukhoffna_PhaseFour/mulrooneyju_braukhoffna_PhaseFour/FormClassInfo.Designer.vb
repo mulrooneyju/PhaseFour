@@ -70,7 +70,7 @@ Partial Class FormClassInfo
         Me.txtState = New System.Windows.Forms.TextBox()
         Me.txtZip = New System.Windows.Forms.TextBox()
         Me.txtStaffno = New System.Windows.Forms.TextBox()
-        Me.TextBox16 = New System.Windows.Forms.TextBox()
+        Me.InfoNum = New System.Windows.Forms.TextBox()
         Me.QualNum = New System.Windows.Forms.TextBox()
         Me.QualFirst = New System.Windows.Forms.Button()
         Me.QualNext = New System.Windows.Forms.Button()
@@ -94,9 +94,9 @@ Partial Class FormClassInfo
         Me.txtValue = New System.Windows.Forms.TextBox()
         Me.txtInstname = New System.Windows.Forms.TextBox()
         Me.txtType = New System.Windows.Forms.TextBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Button23 = New System.Windows.Forms.Button()
-        Me.Button24 = New System.Windows.Forms.Button()
+        Me.feildDrop = New System.Windows.Forms.ComboBox()
+        Me.All = New System.Windows.Forms.Button()
+        Me.Search = New System.Windows.Forms.Button()
         Me.dtpQauldate = New System.Windows.Forms.DateTimePicker()
         Me.txtStreet = New System.Windows.Forms.TextBox()
         Me.Label23 = New System.Windows.Forms.Label()
@@ -509,12 +509,12 @@ Partial Class FormClassInfo
         Me.txtStaffno.Size = New System.Drawing.Size(170, 20)
         Me.txtStaffno.TabIndex = 64
         '
-        'TextBox16
+        'InfoNum
         '
-        Me.TextBox16.Location = New System.Drawing.Point(156, 564)
-        Me.TextBox16.Name = "TextBox16"
-        Me.TextBox16.Size = New System.Drawing.Size(35, 20)
-        Me.TextBox16.TabIndex = 65
+        Me.InfoNum.Location = New System.Drawing.Point(156, 564)
+        Me.InfoNum.Name = "InfoNum"
+        Me.InfoNum.Size = New System.Drawing.Size(35, 20)
+        Me.InfoNum.TabIndex = 65
         '
         'QualNum
         '
@@ -707,34 +707,34 @@ Partial Class FormClassInfo
         Me.txtType.Size = New System.Drawing.Size(170, 20)
         Me.txtType.TabIndex = 88
         '
-        'ComboBox1
+        'feildDrop
         '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"TYPE", "ORGNAME"})
-        Me.ComboBox1.Location = New System.Drawing.Point(491, 405)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox1.TabIndex = 89
+        Me.feildDrop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.feildDrop.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.feildDrop.FormattingEnabled = True
+        Me.feildDrop.Items.AddRange(New Object() {"TYPE", "ORGNAME"})
+        Me.feildDrop.Location = New System.Drawing.Point(491, 405)
+        Me.feildDrop.Name = "feildDrop"
+        Me.feildDrop.Size = New System.Drawing.Size(121, 21)
+        Me.feildDrop.TabIndex = 89
         '
-        'Button23
+        'All
         '
-        Me.Button23.Location = New System.Drawing.Point(653, 401)
-        Me.Button23.Name = "Button23"
-        Me.Button23.Size = New System.Drawing.Size(75, 23)
-        Me.Button23.TabIndex = 90
-        Me.Button23.Text = "All"
-        Me.Button23.UseVisualStyleBackColor = True
+        Me.All.Location = New System.Drawing.Point(653, 401)
+        Me.All.Name = "All"
+        Me.All.Size = New System.Drawing.Size(75, 23)
+        Me.All.TabIndex = 90
+        Me.All.Text = "All"
+        Me.All.UseVisualStyleBackColor = True
         '
-        'Button24
+        'Search
         '
-        Me.Button24.Location = New System.Drawing.Point(654, 429)
-        Me.Button24.Name = "Button24"
-        Me.Button24.Size = New System.Drawing.Size(75, 23)
-        Me.Button24.TabIndex = 91
-        Me.Button24.Text = "Search"
-        Me.Button24.UseVisualStyleBackColor = True
+        Me.Search.Location = New System.Drawing.Point(654, 429)
+        Me.Search.Name = "Search"
+        Me.Search.Size = New System.Drawing.Size(75, 23)
+        Me.Search.TabIndex = 91
+        Me.Search.Text = "Search"
+        Me.Search.UseVisualStyleBackColor = True
         '
         'dtpQauldate
         '
@@ -796,9 +796,9 @@ Partial Class FormClassInfo
         Me.Controls.Add(Me.txtStreet)
         Me.Controls.Add(Me.Label23)
         Me.Controls.Add(Me.dtpQauldate)
-        Me.Controls.Add(Me.Button24)
-        Me.Controls.Add(Me.Button23)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.Search)
+        Me.Controls.Add(Me.All)
+        Me.Controls.Add(Me.feildDrop)
         Me.Controls.Add(Me.txtType)
         Me.Controls.Add(Me.txtInstname)
         Me.Controls.Add(Me.txtValue)
@@ -822,7 +822,7 @@ Partial Class FormClassInfo
         Me.Controls.Add(Me.QualSave)
         Me.Controls.Add(Me.QualDelete)
         Me.Controls.Add(Me.QaulPrevious)
-        Me.Controls.Add(Me.TextBox16)
+        Me.Controls.Add(Me.InfoNum)
         Me.Controls.Add(Me.txtStaffno)
         Me.Controls.Add(Me.txtZip)
         Me.Controls.Add(Me.txtState)
@@ -927,7 +927,7 @@ Partial Class FormClassInfo
     Friend WithEvents txtState As TextBox
     Friend WithEvents txtZip As TextBox
     Friend WithEvents txtStaffno As TextBox
-    Friend WithEvents TextBox16 As TextBox
+    Friend WithEvents InfoNum As TextBox
     Friend WithEvents QualNum As TextBox
     Friend WithEvents QualFirst As Button
     Friend WithEvents QualNext As Button
@@ -951,9 +951,9 @@ Partial Class FormClassInfo
     Friend WithEvents txtValue As TextBox
     Friend WithEvents txtInstname As TextBox
     Friend WithEvents txtType As TextBox
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents Button23 As Button
-    Friend WithEvents Button24 As Button
+    Friend WithEvents feildDrop As ComboBox
+    Friend WithEvents All As Button
+    Friend WithEvents Search As Button
     Friend WithEvents dtpQauldate As DateTimePicker
     Friend WithEvents txtStreet As TextBox
     Friend WithEvents Label23 As Label
