@@ -65,7 +65,7 @@
 
     End Sub
 
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles InfoNext.Click
         staffBindingSource.MoveNext()
         qualificationsDataView.RowFilter = "STAFFNO = '" + txtStaffno.Text + "'"
         experienceDataView.RowFilter = "STAFFNO = '" + txtStaffno.Text + "'"
@@ -76,15 +76,15 @@
 
     End Sub
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles InfoLast.Click
         staffBindingSource.MoveLast()
     End Sub
 
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles InfoFirst.Click
         staffBindingSource.MoveFirst()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles InfoPrevious.Click
         staffBindingSource.MovePrevious()
         TextBox16.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
     End Sub

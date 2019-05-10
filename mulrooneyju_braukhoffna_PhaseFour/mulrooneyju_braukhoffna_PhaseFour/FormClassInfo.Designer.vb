@@ -47,13 +47,13 @@ Partial Class FormClassInfo
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.InfoPrevious = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
+        Me.InfoLast = New System.Windows.Forms.Button()
+        Me.InfoNext = New System.Windows.Forms.Button()
+        Me.InfoFirst = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Button22 = New System.Windows.Forms.Button()
         Me.txtPhone = New System.Windows.Forms.TextBox()
@@ -330,14 +330,14 @@ Partial Class FormClassInfo
         Me.Label27.TabIndex = 26
         Me.Label27.Text = "LASTNAME"
         '
-        'Button1
+        'InfoPrevious
         '
-        Me.Button1.Location = New System.Drawing.Point(89, 561)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(42, 23)
-        Me.Button1.TabIndex = 27
-        Me.Button1.Text = "<"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.InfoPrevious.Location = New System.Drawing.Point(89, 561)
+        Me.InfoPrevious.Name = "InfoPrevious"
+        Me.InfoPrevious.Size = New System.Drawing.Size(42, 23)
+        Me.InfoPrevious.TabIndex = 27
+        Me.InfoPrevious.Text = "<"
+        Me.InfoPrevious.UseVisualStyleBackColor = True
         '
         'Button2
         '
@@ -366,32 +366,32 @@ Partial Class FormClassInfo
         Me.Button4.Text = "New"
         Me.Button4.UseVisualStyleBackColor = True
         '
-        'Button5
+        'InfoLast
         '
-        Me.Button5.Location = New System.Drawing.Point(274, 561)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(42, 23)
-        Me.Button5.TabIndex = 31
-        Me.Button5.Text = ">|"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.InfoLast.Location = New System.Drawing.Point(274, 561)
+        Me.InfoLast.Name = "InfoLast"
+        Me.InfoLast.Size = New System.Drawing.Size(42, 23)
+        Me.InfoLast.TabIndex = 31
+        Me.InfoLast.Text = ">|"
+        Me.InfoLast.UseVisualStyleBackColor = True
         '
-        'Button6
+        'InfoNext
         '
-        Me.Button6.Location = New System.Drawing.Point(219, 561)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(42, 23)
-        Me.Button6.TabIndex = 32
-        Me.Button6.Text = ">"
-        Me.Button6.UseVisualStyleBackColor = True
+        Me.InfoNext.Location = New System.Drawing.Point(219, 561)
+        Me.InfoNext.Name = "InfoNext"
+        Me.InfoNext.Size = New System.Drawing.Size(42, 23)
+        Me.InfoNext.TabIndex = 32
+        Me.InfoNext.Text = ">"
+        Me.InfoNext.UseVisualStyleBackColor = True
         '
-        'Button7
+        'InfoFirst
         '
-        Me.Button7.Location = New System.Drawing.Point(34, 561)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(42, 23)
-        Me.Button7.TabIndex = 33
-        Me.Button7.Text = "|<"
-        Me.Button7.UseVisualStyleBackColor = True
+        Me.InfoFirst.Location = New System.Drawing.Point(34, 561)
+        Me.InfoFirst.Name = "InfoFirst"
+        Me.InfoFirst.Size = New System.Drawing.Size(42, 23)
+        Me.InfoFirst.TabIndex = 33
+        Me.InfoFirst.Text = "|<"
+        Me.InfoFirst.UseVisualStyleBackColor = True
         '
         'Label8
         '
@@ -839,13 +839,13 @@ Partial Class FormClassInfo
         Me.Controls.Add(Me.txtPhone)
         Me.Controls.Add(Me.Button22)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Button7)
-        Me.Controls.Add(Me.Button6)
-        Me.Controls.Add(Me.Button5)
+        Me.Controls.Add(Me.InfoFirst)
+        Me.Controls.Add(Me.InfoNext)
+        Me.Controls.Add(Me.InfoLast)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.InfoPrevious)
         Me.Controls.Add(Me.Label27)
         Me.Controls.Add(Me.Label26)
         Me.Controls.Add(Me.Label25)
@@ -904,13 +904,13 @@ Partial Class FormClassInfo
     Friend WithEvents Label25 As Label
     Friend WithEvents Label26 As Label
     Friend WithEvents Label27 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents InfoPrevious As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button6 As Button
-    Friend WithEvents Button7 As Button
+    Friend WithEvents InfoLast As Button
+    Friend WithEvents InfoNext As Button
+    Friend WithEvents InfoFirst As Button
     Friend WithEvents Label8 As Label
     Friend WithEvents Button22 As Button
     Friend WithEvents txtPhone As TextBox
