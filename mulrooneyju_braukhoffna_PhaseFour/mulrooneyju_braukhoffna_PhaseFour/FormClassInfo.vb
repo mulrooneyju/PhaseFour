@@ -42,14 +42,14 @@
         dtpQauldate.DataBindings.Add("Text", qualificationBindingSource, "qualdate")
 
         txtOrgname.DataBindings.Add("Text", experienceBindingSource, "orgname")
-        txtExpPostition.DataBindings.Add("Text", experienceBindingSource, "Position")
+        txtPostition.DataBindings.Add("Text", experienceBindingSource, "Position")
         dtpStartDate.DataBindings.Add("Text", experienceBindingSource, "startdate")
         dtpFinishDate.DataBindings.Add("Text", experienceBindingSource, "finishdate")
 
 
         TextBox16.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
         QualNum.Text = (qualificationBindingSource.Position + 1) & "/" & qualificationBindingSource.Count
-        TextBox18.Text = (experienceBindingSource.Position + 1) & "/" & experienceBindingSource.Count
+        ExpNum.Text = (experienceBindingSource.Position + 1) & "/" & experienceBindingSource.Count
         ButtonChecker()
     End Sub
 
@@ -66,85 +66,14 @@
 
     End Sub
 
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles InfoNext.Click
-        staffBindingSource.MoveNext()
-        experienceDataView.RowFilter = "STAFFNO = '" + txtStaffno.Text + "'"
-        TextBox16.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
-        UpdateQual()
-    End Sub
-
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles InfoLast.Click
-        staffBindingSource.MoveLast()
-        TextBox16.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
-        UpdateQual()
-
-    End Sub
-
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles InfoFirst.Click
-        staffBindingSource.MoveFirst()
-        TextBox16.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
-        UpdateQual()
-
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles InfoPrevious.Click
-        staffBindingSource.MovePrevious()
-        TextBox16.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
-        UpdateQual()
-
-    End Sub
-
-    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles QualNext.Click
-        qualificationBindingSource.MoveNext()
-        UpdateQual()
-
-    End Sub
-
-    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles QualLast.Click
-        qualificationBindingSource.MoveLast()
-        UpdateQual()
-    End Sub
-
-    Private Sub Button14_Click(sender As Object, e As EventArgs) Handles QualPrevious.Click
-        qualificationBindingSource.MovePrevious()
-        UpdateQual()
-
-
-    End Sub
-
-    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles QualFirst.Click
-        qualificationBindingSource.MoveFirst()
-        UpdateQual()
-    End Sub
 
     Private Sub UpdateQual()
         qualificationsDataView.RowFilter = "STAFFNO = '" + txtStaffno.Text + "'"
         experienceDataView.RowFilter = "staffno = '" & txtStaffno.Text & "'"
         QualNum.Text = (qualificationBindingSource.Position + 1) & "/" & qualificationBindingSource.Count
-        TextBox18.Text = (experienceBindingSource.Position + 1) & "/" & experienceBindingSource.Count
+        ExpNum.Text = (experienceBindingSource.Position + 1) & "/" & experienceBindingSource.Count
         ButtonChecker()
     End Sub
-
-    Private Sub Button15_Click(sender As Object, e As EventArgs) Handles ExpFirst.Click
-        experienceBindingSource.MoveFirst()
-        TextBox18.Text = (experienceBindingSource.Position + 1) & "/" & experienceBindingSource.Count
-    End Sub
-
-    Private Sub Button21_Click(sender As Object, e As EventArgs) Handles ExpPrevious.Click
-        experienceBindingSource.MovePrevious()
-        TextBox18.Text = (experienceBindingSource.Position + 1) & "/" & experienceBindingSource.Count
-    End Sub
-
-    Private Sub Button16_Click(sender As Object, e As EventArgs) Handles ExpNext.Click
-        experienceBindingSource.MoveNext()
-        TextBox18.Text = (experienceBindingSource.Position + 1) & "/" & experienceBindingSource.Count
-    End Sub
-
-    Private Sub Button17_Click(sender As Object, e As EventArgs) Handles ExpLast.Click
-        experienceBindingSource.MoveNext()
-        TextBox18.Text = (experienceBindingSource.Position + 1) & "/" & experienceBindingSource.Count
-    End Sub
-
     Private Sub ButtonChecker()
         If (staffBindingSource.Count > 1) Then
             InfoNext.Enabled = True
@@ -154,6 +83,55 @@
             InfoLast.Enabled = False
         End If
     End Sub
+
+
+    ' Qaulification Buttons
+    'Arrows
+    Private Sub QualNext_Click(sender As Object, e As EventArgs) Handles QualNext.Click
+        qualificationBindingSource.MoveNext()
+        UpdateQual()
+
+    End Sub
+
+    Private Sub QualLast_Click(sender As Object, e As EventArgs) Handles QualLast.Click
+        qualificationBindingSource.MoveLast()
+        UpdateQual()
+    End Sub
+
+    Private Sub QaulPrevious_Click(sender As Object, e As EventArgs) Handles QaulPrevious.Click
+        qualificationBindingSource.MovePrevious()
+        UpdateQual()
+
+
+    End Sub
+
+    Private Sub QualFirst_Click(sender As Object, e As EventArgs) Handles QualFirst.Click
+        qualificationBindingSource.MoveFirst()
+        UpdateQual()
+    End Sub
+
+    'Action Buttons
+    Private Sub QualSave_Click(sender As Object, e As EventArgs) Handles QualSave.Click
+        Try
+            qualificationBindingSource.EndEdit()
+            Oracle.qualificationAdapter.Update(Oracle.staffTable)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub QualDelete_Click(sender As Object, e As EventArgs) Handles QualDelete.Click
+        Try
+            qualificationBindingSource.RemoveCurrent()
+            QualNum.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
+            QualSave.PerformClick()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
+
+    End Sub
+
     Private Sub QualNew_Click(sender As Object, e As EventArgs) Handles QualNew.Click
         txtType.Clear()
         txtInstname.Clear()
@@ -168,29 +146,44 @@
 
     End Sub
 
-    Private Sub QualSave_Click(sender As Object, e As EventArgs) Handles QualSave.Click
-        Try
-            qualificationBindingSource.EndEdit()
-            Oracle.qualificationAdapter.Update(Oracle.staffTable)
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
+
+
+    'Staff Buttons
+    'Arrows
+    Private Sub InfoFirst_Click(sender As Object, e As EventArgs) Handles InfoFirst.Click
+        staffBindingSource.MoveFirst()
+        TextBox16.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
+        UpdateQual()
+
     End Sub
 
-    Private Sub QualDelete_Click(sender As Object, e As EventArgs) Handles QualDelete.Click
-        Try
-            qualificationBindingSource.RemoveCurrent()
-            QualNum.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
+    Private Sub InfoPrevious_Click(sender As Object, e As EventArgs) Handles InfoPrevious.Click
+        staffBindingSource.MovePrevious()
+        TextBox16.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
+        UpdateQual()
+
     End Sub
 
-    Private Sub StaffDelete_Click(sender As Object, e As EventArgs) Handles StaffDelete.Click
-        Oracle.staffCommand.CommandText = "Delete " + txtStaffno.Text + " From UWP_Staff"
+    Private Sub InfoNext_Click(sender As Object, e As EventArgs) Handles InfoNext.Click
+        staffBindingSource.MoveNext()
+        experienceDataView.RowFilter = "STAFFNO = '" + txtStaffno.Text + "'"
+        TextBox16.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
+        UpdateQual()
+    End Sub
+
+    Private Sub InfoLast_Click(sender As Object, e As EventArgs) Handles InfoLast.Click
+        staffBindingSource.MoveLast()
+        TextBox16.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
+        UpdateQual()
+
+    End Sub
+
+    'Action Buttons
+    Private Sub StaffDelete_Click(sender As Object, e As EventArgs) Handles QaulPrevious.Click
         Try
             staffBindingSource.RemoveCurrent()
             TextBox16.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
+            StaffSave.PerformClick()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
@@ -229,9 +222,70 @@
         Try
             staffBindingSource.EndEdit()
             Oracle.staffAdapter.Update(Oracle.staffTable)
+            StaffSave.PerformClick()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
 
     End Sub
+
+
+
+    'Experience Buttons
+    'Arrow
+    Private Sub expFirst_Click(sender As Object, e As EventArgs) Handles expFirst.Click
+        experienceBindingSource.MoveFirst()
+        ExpNum.Text = (experienceBindingSource.Position + 1) & "/" & experienceBindingSource.Count
+    End Sub
+
+    Private Sub expPrevious_Click(sender As Object, e As EventArgs) Handles expPrevious.Click
+        experienceBindingSource.MovePrevious()
+        ExpNum.Text = (experienceBindingSource.Position + 1) & "/" & experienceBindingSource.Count
+    End Sub
+
+    Private Sub expNext_Click(sender As Object, e As EventArgs) Handles expNext.Click
+        experienceBindingSource.MoveNext()
+        ExpNum.Text = (experienceBindingSource.Position + 1) & "/" & experienceBindingSource.Count
+    End Sub
+
+    Private Sub ExpLast_Click(sender As Object, e As EventArgs) Handles ExpLast.Click
+        experienceBindingSource.MoveNext()
+        ExpNum.Text = (experienceBindingSource.Position + 1) & "/" & experienceBindingSource.Count
+    End Sub
+
+    'Action Buttons
+    Private Sub ExpSave_Click(sender As Object, e As EventArgs) Handles ExpSave.Click
+        Try
+            experienceBindingSource.EndEdit()
+            Oracle.experienceAdapter.Update(Oracle.staffTable)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub ExpDelete_Click(sender As Object, e As EventArgs) Handles ExpDelete.Click
+        Try
+            experienceBindingSource.RemoveCurrent()
+            ExpNum.Text = (experienceBindingSource.Position + 1) & "/" & experienceBindingSource.Count
+            ExpSave.PerformClick()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub ExpNew_Click(sender As Object, e As EventArgs) Handles ExpNew.Click
+        txtOrgname.Clear()
+        txtPosition.Clear()
+
+        Dim row As DataRow
+
+        row = Oracle.experienceTable.NewRow
+        Oracle.experienceTable.Rows.Add(row)
+        experienceBindingSource.MoveLast()
+
+        ExpNum.Text = (experienceBindingSource.Position + 1) & "/" & experienceBindingSource.Count
+    End Sub
+
+    'Search
+
 End Class

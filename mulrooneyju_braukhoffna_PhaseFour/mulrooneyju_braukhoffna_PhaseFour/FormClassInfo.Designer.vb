@@ -79,13 +79,13 @@ Partial Class FormClassInfo
         Me.QualSave = New System.Windows.Forms.Button()
         Me.QualDelete = New System.Windows.Forms.Button()
         Me.QaulPrevious = New System.Windows.Forms.Button()
-        Me.TextBox18 = New System.Windows.Forms.TextBox()
+        Me.ExpNum = New System.Windows.Forms.TextBox()
         Me.expFirst = New System.Windows.Forms.Button()
         Me.expNext = New System.Windows.Forms.Button()
         Me.ExpLast = New System.Windows.Forms.Button()
-        Me.Button18 = New System.Windows.Forms.Button()
-        Me.Button19 = New System.Windows.Forms.Button()
-        Me.Button20 = New System.Windows.Forms.Button()
+        Me.ExpNew = New System.Windows.Forms.Button()
+        Me.ExpSave = New System.Windows.Forms.Button()
+        Me.ExpDelete = New System.Windows.Forms.Button()
         Me.expPrevious = New System.Windows.Forms.Button()
         Me.dtpFinishDate = New System.Windows.Forms.DateTimePicker()
         Me.dtpStartDate = New System.Windows.Forms.DateTimePicker()
@@ -586,12 +586,12 @@ Partial Class FormClassInfo
         Me.QaulPrevious.Text = "<"
         Me.QaulPrevious.UseVisualStyleBackColor = True
         '
-        'TextBox18
+        'ExpNum
         '
-        Me.TextBox18.Location = New System.Drawing.Point(591, 324)
-        Me.TextBox18.Name = "TextBox18"
-        Me.TextBox18.Size = New System.Drawing.Size(35, 20)
-        Me.TextBox18.TabIndex = 81
+        Me.ExpNum.Location = New System.Drawing.Point(591, 324)
+        Me.ExpNum.Name = "ExpNum"
+        Me.ExpNum.Size = New System.Drawing.Size(35, 20)
+        Me.ExpNum.TabIndex = 81
         '
         'expFirst
         '
@@ -620,32 +620,32 @@ Partial Class FormClassInfo
         Me.ExpLast.Text = ">|"
         Me.ExpLast.UseVisualStyleBackColor = True
         '
-        'Button18
+        'ExpNew
         '
-        Me.Button18.Location = New System.Drawing.Point(491, 350)
-        Me.Button18.Name = "Button18"
-        Me.Button18.Size = New System.Drawing.Size(75, 23)
-        Me.Button18.TabIndex = 77
-        Me.Button18.Text = "New"
-        Me.Button18.UseVisualStyleBackColor = True
+        Me.ExpNew.Location = New System.Drawing.Point(491, 350)
+        Me.ExpNew.Name = "ExpNew"
+        Me.ExpNew.Size = New System.Drawing.Size(75, 23)
+        Me.ExpNew.TabIndex = 77
+        Me.ExpNew.Text = "New"
+        Me.ExpNew.UseVisualStyleBackColor = True
         '
-        'Button19
+        'ExpSave
         '
-        Me.Button19.Location = New System.Drawing.Point(572, 349)
-        Me.Button19.Name = "Button19"
-        Me.Button19.Size = New System.Drawing.Size(75, 23)
-        Me.Button19.TabIndex = 76
-        Me.Button19.Text = "Save"
-        Me.Button19.UseVisualStyleBackColor = True
+        Me.ExpSave.Location = New System.Drawing.Point(572, 349)
+        Me.ExpSave.Name = "ExpSave"
+        Me.ExpSave.Size = New System.Drawing.Size(75, 23)
+        Me.ExpSave.TabIndex = 76
+        Me.ExpSave.Text = "Save"
+        Me.ExpSave.UseVisualStyleBackColor = True
         '
-        'Button20
+        'ExpDelete
         '
-        Me.Button20.Location = New System.Drawing.Point(653, 350)
-        Me.Button20.Name = "Button20"
-        Me.Button20.Size = New System.Drawing.Size(75, 23)
-        Me.Button20.TabIndex = 75
-        Me.Button20.Text = "Delete"
-        Me.Button20.UseVisualStyleBackColor = True
+        Me.ExpDelete.Location = New System.Drawing.Point(653, 350)
+        Me.ExpDelete.Name = "ExpDelete"
+        Me.ExpDelete.Size = New System.Drawing.Size(75, 23)
+        Me.ExpDelete.TabIndex = 75
+        Me.ExpDelete.Text = "Delete"
+        Me.ExpDelete.UseVisualStyleBackColor = True
         '
         'expPrevious
         '
@@ -806,13 +806,13 @@ Partial Class FormClassInfo
         Me.Controls.Add(Me.txtPostition)
         Me.Controls.Add(Me.dtpStartDate)
         Me.Controls.Add(Me.dtpFinishDate)
-        Me.Controls.Add(Me.TextBox18)
+        Me.Controls.Add(Me.ExpNum)
         Me.Controls.Add(Me.expFirst)
         Me.Controls.Add(Me.expNext)
         Me.Controls.Add(Me.ExpLast)
-        Me.Controls.Add(Me.Button18)
-        Me.Controls.Add(Me.Button19)
-        Me.Controls.Add(Me.Button20)
+        Me.Controls.Add(Me.ExpNew)
+        Me.Controls.Add(Me.ExpSave)
+        Me.Controls.Add(Me.ExpDelete)
         Me.Controls.Add(Me.expPrevious)
         Me.Controls.Add(Me.QualNum)
         Me.Controls.Add(Me.QualFirst)
@@ -936,13 +936,13 @@ Partial Class FormClassInfo
     Friend WithEvents QualSave As Button
     Friend WithEvents QualDelete As Button
     Friend WithEvents QaulPrevious As Button
-    Friend WithEvents TextBox18 As TextBox
+    Friend WithEvents ExpNum As TextBox
     Friend WithEvents expFirst As Button
     Friend WithEvents expNext As Button
     Friend WithEvents ExpLast As Button
-    Friend WithEvents Button18 As Button
-    Friend WithEvents Button19 As Button
-    Friend WithEvents Button20 As Button
+    Friend WithEvents ExpNew As Button
+    Friend WithEvents ExpSave As Button
+    Friend WithEvents ExpDelete As Button
     Friend WithEvents expPrevious As Button
     Friend WithEvents dtpFinishDate As DateTimePicker
     Friend WithEvents dtpStartDate As DateTimePicker
