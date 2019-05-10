@@ -5,51 +5,42 @@
         Cancel
     End Enum
 
+    Friend Shared OracleConnection As New System.Data.OracleClient.OracleConnection
+    'Log in page
+    Friend Shared frmLogin As New FormClassLogin
+    Private Shared frmInfo As New FormClassInfo
+
+
     Friend Shared Result As ResponseType
     Friend Shared UserName As String
     Friend Shared PassWord As String
     Friend Shared Server As String
 
-    Friend Shared OracleConnection As New System.Data.OracleClient.OracleConnection
-
-
+    'Variables for Staff
     Friend Shared staffAdapter As New System.Data.OracleClient.OracleDataAdapter
     Friend Shared staffCommand As New System.Data.OracleClient.OracleCommand
     Friend Shared staffCommandBuilder As System.Data.OracleClient.OracleCommandBuilder
     Friend Shared staffTable As New System.Data.DataTable
 
+    'Variables for qualification
     Friend Shared qualificationAdapter As New System.Data.OracleClient.OracleDataAdapter
     Friend Shared qualificationCommand As New System.Data.OracleClient.OracleCommand
     Friend Shared qualificationCommandBuilder As System.Data.OracleClient.OracleCommandBuilder
     Friend Shared qualificationTable As New System.Data.DataTable("UWP_Qualifications")
 
+    'Variables for Expectation
     Friend Shared experienceAdapter As New System.Data.OracleClient.OracleDataAdapter
     Friend Shared experienceCommand As New System.Data.OracleClient.OracleCommand
     Friend Shared experienceCommandBuilder As System.Data.OracleClient.OracleCommandBuilder
     Friend Shared experienceTable As New System.Data.DataTable("UWP_Experience")
 
 
-
-
-
-    Friend Shared frmLogin As New FormClassLogin
-    Private Shared frmInfo As New FormClassInfo
-
-
-
     Public Shared Sub LogInAtRunTime()
+
 
         OracleConnection.ConnectionString = "Data Source=" & Server & ";User ID=" & UserName & ";Password=" & PassWord & ";Unicode=True"
 
-        staffCommand.Connection = OracleConnection
-        staffCommandBuilder = New System.Data.OracleClient.OracleCommandBuilder(staffAdapter)
-
-        experienceCommand.Connection = OracleConnection
-        experienceCommandBuilder = New System.Data.OracleClient.OracleCommandBuilder(experienceAdapter)
-
-        qualificationCommand.Connection = OracleConnection
-        qualificationCommandBuilder = New System.Data.OracleClient.OracleCommandBuilder(qualificationAdapter)
-
+        'staff table set up
         staffCommand.CommandType = CommandType.Text
         staffCommand.CommandText = "Select * from UWP_STAFF"
         staffCommand.Connection = OracleConnection
@@ -58,6 +49,17 @@
         staffCommandBuilder = New System.Data.OracleClient.OracleCommandBuilder(staffAdapter)
         staffAdapter.Fill(staffTable)
 
+        'qualification table set up 
+        qualificationCommand.CommandType = CommandType.Text
+        qualificationCommand.CommandText = "Select * from UWP_Qualification"
+        qualificationCommand.Connection = OracleConnection
+
+        qualificationAdapter.SelectCommand = qualificationCommand
+        qualificationCommandBuilder = New System.Data.OracleClient.OracleCommandBuilder(qualificationAdapter)
+        staffAdapter.Fill(qualificationTable)
+
+
+        'Work Experience table set up
         experienceCommand.CommandType = CommandType.Text
         experienceCommand.CommandText = "Select * from UWP_WorkExperience"
         experienceCommand.Connection = OracleConnection
@@ -67,21 +69,7 @@
         experienceAdapter.Fill(experienceTable)
 
 
-
-        qualificationCommand.CommandType = CommandType.Text
-        qualificationCommand.CommandText = "Select * from UWP_Qualifications"
-        qualificationCommand.Connection = OracleConnection
-
-        qualificationAdapter.SelectCommand = qualificationCommand
-        qualificationCommandBuilder = New System.Data.OracleClient.OracleCommandBuilder(qualificationAdapter)
-        qualificationAdapter.Fill(qualificationTable)
-
-        ' Need to set row filter for bookingDataView
-
-
     End Sub
-
-
 
     Public Shared Sub Main()
         Dim connected As Boolean
