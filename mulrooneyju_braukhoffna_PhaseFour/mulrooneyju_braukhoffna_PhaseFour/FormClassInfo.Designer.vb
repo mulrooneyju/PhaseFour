@@ -71,13 +71,13 @@ Partial Class FormClassInfo
         Me.txtZip = New System.Windows.Forms.TextBox()
         Me.txtStaffno = New System.Windows.Forms.TextBox()
         Me.TextBox16 = New System.Windows.Forms.TextBox()
-        Me.TextBox17 = New System.Windows.Forms.TextBox()
+        Me.QualNum = New System.Windows.Forms.TextBox()
         Me.QualFirst = New System.Windows.Forms.Button()
         Me.QualNext = New System.Windows.Forms.Button()
         Me.QualLast = New System.Windows.Forms.Button()
-        Me.Button11 = New System.Windows.Forms.Button()
-        Me.Button12 = New System.Windows.Forms.Button()
-        Me.Button13 = New System.Windows.Forms.Button()
+        Me.QualNew = New System.Windows.Forms.Button()
+        Me.QualSave = New System.Windows.Forms.Button()
+        Me.QualDelete = New System.Windows.Forms.Button()
         Me.QaulPrevious = New System.Windows.Forms.Button()
         Me.TextBox18 = New System.Windows.Forms.TextBox()
         Me.expFirst = New System.Windows.Forms.Button()
@@ -516,12 +516,12 @@ Partial Class FormClassInfo
         Me.TextBox16.Size = New System.Drawing.Size(35, 20)
         Me.TextBox16.TabIndex = 65
         '
-        'TextBox17
+        'QualNum
         '
-        Me.TextBox17.Location = New System.Drawing.Point(575, 117)
-        Me.TextBox17.Name = "TextBox17"
-        Me.TextBox17.Size = New System.Drawing.Size(35, 20)
-        Me.TextBox17.TabIndex = 73
+        Me.QualNum.Location = New System.Drawing.Point(575, 117)
+        Me.QualNum.Name = "QualNum"
+        Me.QualNum.Size = New System.Drawing.Size(35, 20)
+        Me.QualNum.TabIndex = 73
         '
         'QualFirst
         '
@@ -550,32 +550,32 @@ Partial Class FormClassInfo
         Me.QualLast.Text = ">|"
         Me.QualLast.UseVisualStyleBackColor = True
         '
-        'Button11
+        'QualNew
         '
-        Me.Button11.Location = New System.Drawing.Point(475, 143)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(75, 23)
-        Me.Button11.TabIndex = 69
-        Me.Button11.Text = "New"
-        Me.Button11.UseVisualStyleBackColor = True
+        Me.QualNew.Location = New System.Drawing.Point(475, 143)
+        Me.QualNew.Name = "QualNew"
+        Me.QualNew.Size = New System.Drawing.Size(75, 23)
+        Me.QualNew.TabIndex = 69
+        Me.QualNew.Text = "New"
+        Me.QualNew.UseVisualStyleBackColor = True
         '
-        'Button12
+        'QualSave
         '
-        Me.Button12.Location = New System.Drawing.Point(556, 142)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(75, 23)
-        Me.Button12.TabIndex = 68
-        Me.Button12.Text = "Save"
-        Me.Button12.UseVisualStyleBackColor = True
+        Me.QualSave.Location = New System.Drawing.Point(556, 142)
+        Me.QualSave.Name = "QualSave"
+        Me.QualSave.Size = New System.Drawing.Size(75, 23)
+        Me.QualSave.TabIndex = 68
+        Me.QualSave.Text = "Save"
+        Me.QualSave.UseVisualStyleBackColor = True
         '
-        'Button13
+        'QualDelete
         '
-        Me.Button13.Location = New System.Drawing.Point(637, 143)
-        Me.Button13.Name = "Button13"
-        Me.Button13.Size = New System.Drawing.Size(75, 23)
-        Me.Button13.TabIndex = 67
-        Me.Button13.Text = "Delete"
-        Me.Button13.UseVisualStyleBackColor = True
+        Me.QualDelete.Location = New System.Drawing.Point(637, 143)
+        Me.QualDelete.Name = "QualDelete"
+        Me.QualDelete.Size = New System.Drawing.Size(75, 23)
+        Me.QualDelete.TabIndex = 67
+        Me.QualDelete.Text = "Delete"
+        Me.QualDelete.UseVisualStyleBackColor = True
         '
         'QaulPrevious
         '
@@ -814,13 +814,13 @@ Partial Class FormClassInfo
         Me.Controls.Add(Me.Button19)
         Me.Controls.Add(Me.Button20)
         Me.Controls.Add(Me.expPrevious)
-        Me.Controls.Add(Me.TextBox17)
+        Me.Controls.Add(Me.QualNum)
         Me.Controls.Add(Me.QualFirst)
         Me.Controls.Add(Me.QualNext)
         Me.Controls.Add(Me.QualLast)
-        Me.Controls.Add(Me.Button11)
-        Me.Controls.Add(Me.Button12)
-        Me.Controls.Add(Me.Button13)
+        Me.Controls.Add(Me.QualNew)
+        Me.Controls.Add(Me.QualSave)
+        Me.Controls.Add(Me.QualDelete)
         Me.Controls.Add(Me.QaulPrevious)
         Me.Controls.Add(Me.TextBox16)
         Me.Controls.Add(Me.txtStaffno)
@@ -928,13 +928,13 @@ Partial Class FormClassInfo
     Friend WithEvents txtZip As TextBox
     Friend WithEvents txtStaffno As TextBox
     Friend WithEvents TextBox16 As TextBox
-    Friend WithEvents TextBox17 As TextBox
+    Friend WithEvents QualNum As TextBox
     Friend WithEvents QualFirst As Button
     Friend WithEvents QualNext As Button
     Friend WithEvents QualLast As Button
-    Friend WithEvents Button11 As Button
-    Friend WithEvents Button12 As Button
-    Friend WithEvents Button13 As Button
+    Friend WithEvents QualNew As Button
+    Friend WithEvents QualSave As Button
+    Friend WithEvents QualDelete As Button
     Friend WithEvents QaulPrevious As Button
     Friend WithEvents TextBox18 As TextBox
     Friend WithEvents expFirst As Button

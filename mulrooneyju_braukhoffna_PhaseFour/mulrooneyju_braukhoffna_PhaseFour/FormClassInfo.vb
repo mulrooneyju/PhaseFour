@@ -155,4 +155,35 @@
 
     End Sub
 
+    Private Sub QualNew_Click(sender As Object, e As EventArgs) Handles QualNew.Click
+        txtType.Clear()
+        txtInstname.Clear()
+
+        Dim row As DataRow
+
+        row = Oracle.qualificationTable.NewRow
+        Oracle.qualificationTable.Rows.Add(row)
+        qualificationBindingSource.MoveLast()
+
+        QualNum.Text = (qualificationBindingSource.Position + 1) & "/" & qualificationBindingSource.Count
+
+    End Sub
+
+    Private Sub QualSave_Click(sender As Object, e As EventArgs) Handles QualSave.Click
+        Try
+            qualificationBindingSource.EndEdit()
+            Oracle.qualificationAdapter.Update(Oracle.staffTable)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub QualDelete_Click(sender As Object, e As EventArgs) Handles QualDelete.Click
+        Try
+            qualificationBindingSource.RemoveCurrent()
+            QualNum.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
 End Class
