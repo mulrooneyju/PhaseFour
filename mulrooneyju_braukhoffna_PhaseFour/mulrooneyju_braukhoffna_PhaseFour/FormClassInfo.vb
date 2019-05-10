@@ -108,6 +108,51 @@
     End Sub
 
     Private Sub StaffDelet_Click(sender As Object, e As EventArgs) Handles StaffDelet.Click
-        Oracle.staffCommand.CommandText = "Delete " + txtStaffno.Text + " From UWP_Staff"
+        Try
+            staffBindingSource.RemoveCurrent()
+            TextBox16.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
+
+    Private Sub StaffNew_Click(sender As Object, e As EventArgs) Handles StaffNew.Click
+        txtStaffno.Clear()
+        txtFname.Clear()
+        txtLastname.Clear()
+        txtStreet.Clear()
+        txtCity.Clear()
+        txtState.Clear()
+        txtZip.Clear()
+        txtPhone.Clear()
+        txtGender.Clear()
+        txtNin.Clear()
+        txtPosition.Clear()
+        txtCursalary.Clear()
+        txtSalaryscale.Clear()
+        txtHrsperwk.Clear()
+        txtPospermtemp.Clear()
+        txtTypeofpay.Clear()
+
+        Dim row As DataRow
+
+        row = Oracle.staffTable.NewRow
+        Oracle.staffTable.Rows.Add(row)
+        staffBindingSource.MoveLast()
+
+        TextBox16.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
+
+
+    End Sub
+
+    Private Sub StaffSave_Click(sender As Object, e As EventArgs) Handles StaffSave.Click
+        Try
+            staffBindingSource.EndEdit()
+            Oracle.staffAdapter.Update(Oracle.staffTable)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
 End Class
