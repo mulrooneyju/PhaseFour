@@ -48,9 +48,9 @@ Partial Class FormClassInfo
         Me.Label26 = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.InfoPrevious = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.StaffDelet = New System.Windows.Forms.Button()
+        Me.StaffSave = New System.Windows.Forms.Button()
+        Me.StaffNew = New System.Windows.Forms.Button()
         Me.InfoLast = New System.Windows.Forms.Button()
         Me.InfoNext = New System.Windows.Forms.Button()
         Me.InfoFirst = New System.Windows.Forms.Button()
@@ -72,21 +72,21 @@ Partial Class FormClassInfo
         Me.txtStaffno = New System.Windows.Forms.TextBox()
         Me.TextBox16 = New System.Windows.Forms.TextBox()
         Me.TextBox17 = New System.Windows.Forms.TextBox()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.Button9 = New System.Windows.Forms.Button()
-        Me.Button10 = New System.Windows.Forms.Button()
+        Me.QualFirst = New System.Windows.Forms.Button()
+        Me.QualNext = New System.Windows.Forms.Button()
+        Me.QualLast = New System.Windows.Forms.Button()
         Me.Button11 = New System.Windows.Forms.Button()
         Me.Button12 = New System.Windows.Forms.Button()
         Me.Button13 = New System.Windows.Forms.Button()
-        Me.Button14 = New System.Windows.Forms.Button()
+        Me.QaulPrevious = New System.Windows.Forms.Button()
         Me.TextBox18 = New System.Windows.Forms.TextBox()
-        Me.Button15 = New System.Windows.Forms.Button()
-        Me.Button16 = New System.Windows.Forms.Button()
-        Me.Button17 = New System.Windows.Forms.Button()
+        Me.expFirst = New System.Windows.Forms.Button()
+        Me.expNext = New System.Windows.Forms.Button()
+        Me.ExpLast = New System.Windows.Forms.Button()
         Me.Button18 = New System.Windows.Forms.Button()
         Me.Button19 = New System.Windows.Forms.Button()
         Me.Button20 = New System.Windows.Forms.Button()
-        Me.Button21 = New System.Windows.Forms.Button()
+        Me.expPrevious = New System.Windows.Forms.Button()
         Me.dtpFinishDate = New System.Windows.Forms.DateTimePicker()
         Me.dtpStartDate = New System.Windows.Forms.DateTimePicker()
         Me.txtPostition = New System.Windows.Forms.TextBox()
@@ -339,32 +339,32 @@ Partial Class FormClassInfo
         Me.InfoPrevious.Text = "<"
         Me.InfoPrevious.UseVisualStyleBackColor = True
         '
-        'Button2
+        'StaffDelet
         '
-        Me.Button2.Location = New System.Drawing.Point(218, 590)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 28
-        Me.Button2.Text = "Delete"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.StaffDelet.Location = New System.Drawing.Point(218, 590)
+        Me.StaffDelet.Name = "StaffDelet"
+        Me.StaffDelet.Size = New System.Drawing.Size(75, 23)
+        Me.StaffDelet.TabIndex = 28
+        Me.StaffDelet.Text = "Delete"
+        Me.StaffDelet.UseVisualStyleBackColor = True
         '
-        'Button3
+        'StaffSave
         '
-        Me.Button3.Location = New System.Drawing.Point(137, 589)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 29
-        Me.Button3.Text = "Save"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.StaffSave.Location = New System.Drawing.Point(137, 589)
+        Me.StaffSave.Name = "StaffSave"
+        Me.StaffSave.Size = New System.Drawing.Size(75, 23)
+        Me.StaffSave.TabIndex = 29
+        Me.StaffSave.Text = "Save"
+        Me.StaffSave.UseVisualStyleBackColor = True
         '
-        'Button4
+        'StaffNew
         '
-        Me.Button4.Location = New System.Drawing.Point(56, 590)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 23)
-        Me.Button4.TabIndex = 30
-        Me.Button4.Text = "New"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.StaffNew.Location = New System.Drawing.Point(56, 590)
+        Me.StaffNew.Name = "StaffNew"
+        Me.StaffNew.Size = New System.Drawing.Size(75, 23)
+        Me.StaffNew.TabIndex = 30
+        Me.StaffNew.Text = "New"
+        Me.StaffNew.UseVisualStyleBackColor = True
         '
         'InfoLast
         '
@@ -523,32 +523,32 @@ Partial Class FormClassInfo
         Me.TextBox17.Size = New System.Drawing.Size(35, 20)
         Me.TextBox17.TabIndex = 73
         '
-        'Button8
+        'QualFirst
         '
-        Me.Button8.Location = New System.Drawing.Point(453, 114)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(42, 23)
-        Me.Button8.TabIndex = 72
-        Me.Button8.Text = "|<"
-        Me.Button8.UseVisualStyleBackColor = True
+        Me.QualFirst.Location = New System.Drawing.Point(453, 114)
+        Me.QualFirst.Name = "QualFirst"
+        Me.QualFirst.Size = New System.Drawing.Size(42, 23)
+        Me.QualFirst.TabIndex = 72
+        Me.QualFirst.Text = "|<"
+        Me.QualFirst.UseVisualStyleBackColor = True
         '
-        'Button9
+        'QualNext
         '
-        Me.Button9.Location = New System.Drawing.Point(638, 114)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(42, 23)
-        Me.Button9.TabIndex = 71
-        Me.Button9.Text = ">"
-        Me.Button9.UseVisualStyleBackColor = True
+        Me.QualNext.Location = New System.Drawing.Point(638, 114)
+        Me.QualNext.Name = "QualNext"
+        Me.QualNext.Size = New System.Drawing.Size(42, 23)
+        Me.QualNext.TabIndex = 71
+        Me.QualNext.Text = ">"
+        Me.QualNext.UseVisualStyleBackColor = True
         '
-        'Button10
+        'QualLast
         '
-        Me.Button10.Location = New System.Drawing.Point(693, 114)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(42, 23)
-        Me.Button10.TabIndex = 70
-        Me.Button10.Text = ">|"
-        Me.Button10.UseVisualStyleBackColor = True
+        Me.QualLast.Location = New System.Drawing.Point(693, 114)
+        Me.QualLast.Name = "QualLast"
+        Me.QualLast.Size = New System.Drawing.Size(42, 23)
+        Me.QualLast.TabIndex = 70
+        Me.QualLast.Text = ">|"
+        Me.QualLast.UseVisualStyleBackColor = True
         '
         'Button11
         '
@@ -577,14 +577,14 @@ Partial Class FormClassInfo
         Me.Button13.Text = "Delete"
         Me.Button13.UseVisualStyleBackColor = True
         '
-        'Button14
+        'QaulPrevious
         '
-        Me.Button14.Location = New System.Drawing.Point(508, 114)
-        Me.Button14.Name = "Button14"
-        Me.Button14.Size = New System.Drawing.Size(42, 23)
-        Me.Button14.TabIndex = 66
-        Me.Button14.Text = "<"
-        Me.Button14.UseVisualStyleBackColor = True
+        Me.QaulPrevious.Location = New System.Drawing.Point(508, 114)
+        Me.QaulPrevious.Name = "QaulPrevious"
+        Me.QaulPrevious.Size = New System.Drawing.Size(42, 23)
+        Me.QaulPrevious.TabIndex = 66
+        Me.QaulPrevious.Text = "<"
+        Me.QaulPrevious.UseVisualStyleBackColor = True
         '
         'TextBox18
         '
@@ -593,32 +593,32 @@ Partial Class FormClassInfo
         Me.TextBox18.Size = New System.Drawing.Size(35, 20)
         Me.TextBox18.TabIndex = 81
         '
-        'Button15
+        'expFirst
         '
-        Me.Button15.Location = New System.Drawing.Point(469, 321)
-        Me.Button15.Name = "Button15"
-        Me.Button15.Size = New System.Drawing.Size(42, 23)
-        Me.Button15.TabIndex = 80
-        Me.Button15.Text = "|<"
-        Me.Button15.UseVisualStyleBackColor = True
+        Me.expFirst.Location = New System.Drawing.Point(469, 321)
+        Me.expFirst.Name = "expFirst"
+        Me.expFirst.Size = New System.Drawing.Size(42, 23)
+        Me.expFirst.TabIndex = 80
+        Me.expFirst.Text = "|<"
+        Me.expFirst.UseVisualStyleBackColor = True
         '
-        'Button16
+        'expNext
         '
-        Me.Button16.Location = New System.Drawing.Point(654, 321)
-        Me.Button16.Name = "Button16"
-        Me.Button16.Size = New System.Drawing.Size(42, 23)
-        Me.Button16.TabIndex = 79
-        Me.Button16.Text = ">"
-        Me.Button16.UseVisualStyleBackColor = True
+        Me.expNext.Location = New System.Drawing.Point(654, 321)
+        Me.expNext.Name = "expNext"
+        Me.expNext.Size = New System.Drawing.Size(42, 23)
+        Me.expNext.TabIndex = 79
+        Me.expNext.Text = ">"
+        Me.expNext.UseVisualStyleBackColor = True
         '
-        'Button17
+        'ExpLast
         '
-        Me.Button17.Location = New System.Drawing.Point(709, 321)
-        Me.Button17.Name = "Button17"
-        Me.Button17.Size = New System.Drawing.Size(42, 23)
-        Me.Button17.TabIndex = 78
-        Me.Button17.Text = ">|"
-        Me.Button17.UseVisualStyleBackColor = True
+        Me.ExpLast.Location = New System.Drawing.Point(709, 321)
+        Me.ExpLast.Name = "ExpLast"
+        Me.ExpLast.Size = New System.Drawing.Size(42, 23)
+        Me.ExpLast.TabIndex = 78
+        Me.ExpLast.Text = ">|"
+        Me.ExpLast.UseVisualStyleBackColor = True
         '
         'Button18
         '
@@ -647,14 +647,14 @@ Partial Class FormClassInfo
         Me.Button20.Text = "Delete"
         Me.Button20.UseVisualStyleBackColor = True
         '
-        'Button21
+        'expPrevious
         '
-        Me.Button21.Location = New System.Drawing.Point(524, 321)
-        Me.Button21.Name = "Button21"
-        Me.Button21.Size = New System.Drawing.Size(42, 23)
-        Me.Button21.TabIndex = 74
-        Me.Button21.Text = "<"
-        Me.Button21.UseVisualStyleBackColor = True
+        Me.expPrevious.Location = New System.Drawing.Point(524, 321)
+        Me.expPrevious.Name = "expPrevious"
+        Me.expPrevious.Size = New System.Drawing.Size(42, 23)
+        Me.expPrevious.TabIndex = 74
+        Me.expPrevious.Text = "<"
+        Me.expPrevious.UseVisualStyleBackColor = True
         '
         'dtpFinishDate
         '
@@ -807,21 +807,21 @@ Partial Class FormClassInfo
         Me.Controls.Add(Me.dtpStartDate)
         Me.Controls.Add(Me.dtpFinishDate)
         Me.Controls.Add(Me.TextBox18)
-        Me.Controls.Add(Me.Button15)
-        Me.Controls.Add(Me.Button16)
-        Me.Controls.Add(Me.Button17)
+        Me.Controls.Add(Me.expFirst)
+        Me.Controls.Add(Me.expNext)
+        Me.Controls.Add(Me.ExpLast)
         Me.Controls.Add(Me.Button18)
         Me.Controls.Add(Me.Button19)
         Me.Controls.Add(Me.Button20)
-        Me.Controls.Add(Me.Button21)
+        Me.Controls.Add(Me.expPrevious)
         Me.Controls.Add(Me.TextBox17)
-        Me.Controls.Add(Me.Button8)
-        Me.Controls.Add(Me.Button9)
-        Me.Controls.Add(Me.Button10)
+        Me.Controls.Add(Me.QualFirst)
+        Me.Controls.Add(Me.QualNext)
+        Me.Controls.Add(Me.QualLast)
         Me.Controls.Add(Me.Button11)
         Me.Controls.Add(Me.Button12)
         Me.Controls.Add(Me.Button13)
-        Me.Controls.Add(Me.Button14)
+        Me.Controls.Add(Me.QaulPrevious)
         Me.Controls.Add(Me.TextBox16)
         Me.Controls.Add(Me.txtStaffno)
         Me.Controls.Add(Me.txtZip)
@@ -842,9 +842,9 @@ Partial Class FormClassInfo
         Me.Controls.Add(Me.InfoFirst)
         Me.Controls.Add(Me.InfoNext)
         Me.Controls.Add(Me.InfoLast)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.StaffNew)
+        Me.Controls.Add(Me.StaffSave)
+        Me.Controls.Add(Me.StaffDelet)
         Me.Controls.Add(Me.InfoPrevious)
         Me.Controls.Add(Me.Label27)
         Me.Controls.Add(Me.Label26)
@@ -905,9 +905,9 @@ Partial Class FormClassInfo
     Friend WithEvents Label26 As Label
     Friend WithEvents Label27 As Label
     Friend WithEvents InfoPrevious As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
+    Friend WithEvents StaffDelet As Button
+    Friend WithEvents StaffSave As Button
+    Friend WithEvents StaffNew As Button
     Friend WithEvents InfoLast As Button
     Friend WithEvents InfoNext As Button
     Friend WithEvents InfoFirst As Button
@@ -929,21 +929,21 @@ Partial Class FormClassInfo
     Friend WithEvents txtStaffno As TextBox
     Friend WithEvents TextBox16 As TextBox
     Friend WithEvents TextBox17 As TextBox
-    Friend WithEvents Button8 As Button
-    Friend WithEvents Button9 As Button
-    Friend WithEvents Button10 As Button
+    Friend WithEvents QualFirst As Button
+    Friend WithEvents QualNext As Button
+    Friend WithEvents QualLast As Button
     Friend WithEvents Button11 As Button
     Friend WithEvents Button12 As Button
     Friend WithEvents Button13 As Button
-    Friend WithEvents Button14 As Button
+    Friend WithEvents QaulPrevious As Button
     Friend WithEvents TextBox18 As TextBox
-    Friend WithEvents Button15 As Button
-    Friend WithEvents Button16 As Button
-    Friend WithEvents Button17 As Button
+    Friend WithEvents expFirst As Button
+    Friend WithEvents expNext As Button
+    Friend WithEvents ExpLast As Button
     Friend WithEvents Button18 As Button
     Friend WithEvents Button19 As Button
     Friend WithEvents Button20 As Button
-    Friend WithEvents Button21 As Button
+    Friend WithEvents expPrevious As Button
     Friend WithEvents dtpFinishDate As DateTimePicker
     Friend WithEvents dtpStartDate As DateTimePicker
     Friend WithEvents txtPostition As TextBox

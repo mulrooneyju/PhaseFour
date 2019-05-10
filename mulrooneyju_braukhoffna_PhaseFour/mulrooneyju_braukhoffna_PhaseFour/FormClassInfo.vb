@@ -36,9 +36,9 @@
 
         qualificationsDataView.RowFilter = "staffno = '" & txtStaffno.Text & "'"
 
-        txtType.DataBindings.Add("Text", qualificationBindingSource, "type")
-        txtInstname.DataBindings.Add("Text", qualificationBindingSource, "Instname")
-        dtpQauldate.DataBindings.Add("Text", qualificationBindingSource, "qualdate")
+        'txtType.DataBindings.Add("Text", qualificationBindingSource, "type")
+        'txtInstname.DataBindings.Add("Text", qualificationBindingSource, "Instname")
+        'dtpQauldate.DataBindings.Add("Text", qualificationBindingSource, "qualdate")
 
 
 
@@ -65,7 +65,7 @@
 
     End Sub
 
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles InfoNext.Click
+    Private Sub InfoNext_Click(sender As Object, e As EventArgs) Handles InfoNext.Click
         staffBindingSource.MoveNext()
         qualificationsDataView.RowFilter = "STAFFNO = '" + txtStaffno.Text + "'"
         experienceDataView.RowFilter = "STAFFNO = '" + txtStaffno.Text + "'"
@@ -76,35 +76,38 @@
 
     End Sub
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles InfoLast.Click
+    Private Sub InfoLast_Click(sender As Object, e As EventArgs) Handles InfoLast.Click
         staffBindingSource.MoveLast()
     End Sub
 
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles InfoFirst.Click
+    Private Sub InfoFisrt_Click(sender As Object, e As EventArgs) Handles InfoFirst.Click
         staffBindingSource.MoveFirst()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles InfoPrevious.Click
+    Private Sub InfoNum_Click(sender As Object, e As EventArgs) Handles InfoPrevious.Click
         staffBindingSource.MovePrevious()
         TextBox16.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
     End Sub
 
-    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+    Private Sub QualNext_Click(sender As Object, e As EventArgs) Handles QualNext.Click
         qualificationBindingSource.MoveNext()
     End Sub
 
-    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+    Private Sub QualLast_Click(sender As Object, e As EventArgs) Handles QualLast.Click
         qualificationBindingSource.MoveLast()
 
     End Sub
 
-    Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click
+    Private Sub QaulPrevious_Click(sender As Object, e As EventArgs) Handles QaulPrevious.Click
         qualificationBindingSource.MovePrevious()
 
     End Sub
 
-    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+    Private Sub QualFirst_Click(sender As Object, e As EventArgs) Handles QualFirst.Click
         qualificationBindingSource.MoveFirst()
     End Sub
 
+    Private Sub StaffDelet_Click(sender As Object, e As EventArgs) Handles StaffDelet.Click
+        Oracle.staffCommand.CommandText = "Delete " + txtStaffno.Text + " From UWP_Staff"
+    End Sub
 End Class
