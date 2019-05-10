@@ -48,7 +48,7 @@
 
 
         TextBox16.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
-        TextBox17.Text = (qualificationBindingSource.Position + 1) & "/" & qualificationBindingSource.Count
+        QualNum.Text = (qualificationBindingSource.Position + 1) & "/" & qualificationBindingSource.Count
         TextBox18.Text = (experienceBindingSource.Position + 1) & "/" & experienceBindingSource.Count
         ButtonChecker()
     End Sub
@@ -120,7 +120,7 @@
     Private Sub UpdateQual()
         qualificationsDataView.RowFilter = "STAFFNO = '" + txtStaffno.Text + "'"
         experienceDataView.RowFilter = "staffno = '" & txtStaffno.Text & "'"
-        TextBox17.Text = (qualificationBindingSource.Position + 1) & "/" & qualificationBindingSource.Count
+        QualNum.Text = (qualificationBindingSource.Position + 1) & "/" & qualificationBindingSource.Count
         TextBox18.Text = (experienceBindingSource.Position + 1) & "/" & experienceBindingSource.Count
         ButtonChecker()
     End Sub
@@ -154,5 +154,84 @@
             InfoLast.Enabled = False
         End If
     End Sub
+    Private Sub QualNew_Click(sender As Object, e As EventArgs) Handles QualNew.Click
+        txtType.Clear()
+        txtInstname.Clear()
 
+        Dim row As DataRow
+
+        row = Oracle.qualificationTable.NewRow
+        Oracle.qualificationTable.Rows.Add(row)
+        qualificationBindingSource.MoveLast()
+
+        QualNum.Text = (qualificationBindingSource.Position + 1) & "/" & qualificationBindingSource.Count
+
+    End Sub
+
+    Private Sub QualSave_Click(sender As Object, e As EventArgs) Handles QualSave.Click
+        Try
+            qualificationBindingSource.EndEdit()
+            Oracle.qualificationAdapter.Update(Oracle.staffTable)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub QualDelete_Click(sender As Object, e As EventArgs) Handles QualDelete.Click
+        Try
+            qualificationBindingSource.RemoveCurrent()
+            QualNum.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub StaffDelete_Click(sender As Object, e As EventArgs) Handles StaffDelete.Click
+        Oracle.staffCommand.CommandText = "Delete " + txtStaffno.Text + " From UWP_Staff"
+        Try
+            staffBindingSource.RemoveCurrent()
+            TextBox16.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub StaffNew_Click(sender As Object, e As EventArgs) Handles StaffNew.Click
+        txtStaffno.Clear()
+        txtFname.Clear()
+        txtLastname.Clear()
+        txtStreet.Clear()
+        txtCity.Clear()
+        txtState.Clear()
+        txtZip.Clear()
+        txtPhone.Clear()
+        txtGender.Clear()
+        txtNin.Clear()
+        txtPosition.Clear()
+        txtCursalary.Clear()
+        txtSalaryscale.Clear()
+        txtHrsperwk.Clear()
+        txtPospermtemp.Clear()
+        txtTypeofpay.Clear()
+
+        Dim row As DataRow
+
+        row = Oracle.staffTable.NewRow
+        Oracle.staffTable.Rows.Add(row)
+        staffBindingSource.MoveLast()
+
+        TextBox16.Text = (staffBindingSource.Position + 1) & "/" & staffBindingSource.Count
+
+
+    End Sub
+
+    Private Sub StaffSave_Click(sender As Object, e As EventArgs) Handles StaffSave.Click
+        Try
+            staffBindingSource.EndEdit()
+            Oracle.staffAdapter.Update(Oracle.staffTable)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
 End Class
